@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MAIN</title>
+	<style type="text/css">
+		/*폰트*/
+		* {font-family: Pretendard,'Noto Sans KR', sans-serif;}
+	/*마진 없애기*/
+		body, h1, h2, h3, p {margin:0;padding: 0;}
+		html{margin: 0;}
+        .footer{position : absolute; bottom : 0; margin-left: 94vw;}
+
+       :root {
+    --text-color: white;
+    --background-color: #263343;
+    --accent-color: rgb(87, 170, 166)
+}      
+a {
+    text-decoration: none;
+    color: var(--text-color); 
+}
+a:hover{color: #008E7D; transition: 0.1s ease-out}
+.navbar {
+    display: flex;
+    background-color: none;
+    margin-left: 60px;
+    
+}
+
+.navbar__logo {
+    font-size: 24px;
+    color: cadetblue;
+}
+
+.navbar__menu li {
+    padding: 10px 20px;
+}
+
+.navbar__icons {
+    list-style: none;
+    display :flex;
+    color:white;
+    padding-left: 0px;
+}
+
+.navbar__icons li {
+    /* padding: 8px 12px; */
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+}
+
+.navbar__menu li {
+    padding: 8px 13px;
+}
+
+.navbar__menu li:hover {
+	  color: white;
+    background-color : none;
+    border-radius: 1px;
+}
+
+.navbar__icons li {
+    padding : 10px;
+}
+
+.navbar__toggleBtn {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding : 10px 24px;
+    }
+    
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+
+    .navbar__icons{
+        display: none;
+        width: 100%;
+        justify-content: center;
+
+    }
+
+    .navbar__toggleBtn {
+        display: block;
+        position: absolute;
+        right : 20px;
+        font-size: 24px;
+        color :rgb(87, 170, 166);
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+        transition: 1s ease-out;
+    }
+}
+
+		.blue{background-color: none; height: 11vh; margin-top: 1vh;}
+		.yellow{background-color: none; height: 8vh;}
+		.green{background-color: green; text-align : center;}
+		.textcenter{text-align: center; }
+		.textbox{display: flex; justify-content: center; width: 1200px; text-align: center; }
+		.img100{width: 100%; height: auto;}
+		.img50{width: 75%;}
+		.imgarrow{width: 36px;}
+		.imgfit{object-fit: cover}
+		
+  		.bgheader{margin:auto; background: none; display: flex; justify-content: center; padding-left: 3.1250vw; padding-right: 3.1250vw;}
+  		.bgchild{background: none; width: 1000px; height: auto; margin: 20; text-align: center; margin-inline-end: 0.5vw;}
+  		.bgchildred{background: none; width: 1000px; height: auto; margin: 20; text-align: center;margin-inline-end: 0.5vw;}
+
+		/*마진*/
+		.margin10{margin-bottom: 0.9259vh;}
+		.margin30{margin-bottom: 2.7778vh;}
+		.margin60{margin-bottom: 7.4074vh;}
+        .marginfull{margin-bottom: 100vw;}
+		.leftmargin{margin-left: 3.1250vw; }
+
+/*		폰트컬러*/
+		.maincolor{color: #008E7D;}
+		.whitecolor{color: white;}
+		.underline{text-decoration: underline;}
+		
+
+
+		/*폰트 패밀리*/
+		.bigtitle{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 700; font-size: 96px;}
+		.title{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 700; font-size: 48px;}
+
+		.semi300{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 300; font-size: 20px;}
+		.semi400{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 400; font-size: 20px;}
+		.semi500{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 500; font-size: 20px;}
+		.semi700{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 700; font-size: 20px;}
+
+		.text400{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 400; font-size: 16px; line-height: 28px;}
+		.text700{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 700; font-size: 16px;}
+
+		.footnote{font-family: Pretendard,'Noto Sans KR', sans-serif; font-weight: 400; font-size: 14px; line-height: 22px;}
+		.spacer{font-family: 'SPACERR-Regular'; font-size: 96px;}
+		.spacermini{font-family: 'SPACERR-Regular'; font-size: 28px;}
+
+		@font-face {
+    font-family: 'SPACERR-Regular'; /*font 이름*/
+    src: url('SPACERR-Regular.ttf'); /* IE9 Compat Modes */}
+
+
+		img{max-width:100%; transition: all 0.2s linear;}
+
+		.a{height: 50vh; background: black; overflow: hidden;}
+		.a:hover img {  transform: scale(1.05); background-color: black; opacity: 40%;}
+	
+
+		.sa {
+        opacity: 0;
+        transition: all .5s ease;
+      }
+
+      /* 아래에서 위로 페이드 인 */
+      .sa-up {
+        transform: translate(0, 100px);}
+       .sa.show {
+        opacity: 1;
+        transform: none;
+
+      }
+
+      .img{background: url(landscape1.gif);}
+
+.text{
+  display: inline; vertical-align: middle;
+  border-right: .05em solid black;
+  animation:  cursor 0.2s ease infinite;
+}
+
+	</style>
+</head>
+<body class="img">
+	<section class="blue">
+		<nav class="navbar"> 
+        <div class="navbar__logo">
+            <i class="fab fa-reddit"></i>
+            <a href="" class="title">hyun.</a>
+        </div>
+        <ul class="navbar__menu semi700">
+            <li><a href="">WORKS</a></li>
+            <li><a href="">INFORMATION</a></li>
+            <li><a href="">BLOG</a></li>
+        </ul>
+        <ul class="navbar__icons">
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+        </ul>
+
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+	</section>
+	<section class="yellow">
+	</section>
+	<section>
+		<div class="leftmargin semi700 margin10">UX/UI Design  *  BX Design  *  Editorial Design</div>
+	</section>
+	<section class="leftmargin">
+		<div class="intro">
+  			 <h1 class="text bigtitle "></h1>
+		</div>
+	</section>
+
+    <div class="footer footnote">
+        last update 2023.09.12
+    </div>
+
+
+</body>
+<script type="text/javascript">
+"use strict";
+const content = "Thank you for comming! Feel free to look around and contact me :)"
+const text = document.querySelector(".text")
+let index = 0;
+
+ function sleep(delay){ 
+     const start = new Date().getTime(); 
+     while (new Date().getTime() < start + delay); 
+    }
+
+function typing(){
+    text.textContent += content[index++];
+    if(index > content.length){
+        text.textContent = ""
+        index = 0;
+        sleep(3000);
+    }
+}
+setInterval(typing, 100)
+</script>
+</html>
